@@ -1,0 +1,402 @@
+\
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预科3班告家长书</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e5799 0%, #207cca 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+            body::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url('https://web-framwork-study.oss-cn-chengdu.aliyuncs.com/%E5%AE%B6%E9%95%BF%E4%B9%A6%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87.png');
+                background-size: cover;
+                background-position: center;
+                opacity: 0.2;
+                z-index: -1;
+            }
+
+        .container {
+            max-width: 800px; /* 缩小容器最大宽度 */
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            background: rgba(0, 40, 85, 0.7);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            padding: 8px 25px;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            max-width: 800px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+        }
+
+        .search-box {
+            display: flex;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            margin-top: 10px;
+            height: 50px;
+        }
+
+            .search-box input {
+                padding: 0 20px;
+                border: none;
+                outline: none;
+                width: 100%;
+                font-size: 1rem;
+                background: transparent;
+                color: white;
+                height: 100%;
+            }
+
+                .search-box input::placeholder {
+                    color: rgba(255, 255, 255, 0.7);
+                }
+
+            .search-box button {
+                padding: 0 25px;
+                background: rgba(255, 215, 0, 0.8);
+                color: #1a3a6c;
+                border: none;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                height: 100%;
+            }
+
+                .search-box button:hover {
+                    background: rgba(255, 225, 60, 0.9);
+                }
+
+        .students-container {
+            background: rgba(0, 30, 70, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .students-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+            .students-header h2 {
+                font-size: 1.6rem;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+        .student-count {
+            background: rgba(255, 215, 0, 0.8);
+            color: #1a3a6c;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .students-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .student-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(5px);
+        }
+
+            .student-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+                background: rgba(255, 255, 255, 0.12);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+        .student-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+            .student-name i {
+                margin-right: 10px;
+                color: #ffd700;
+            }
+
+        .parent-link-container {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 20, 50, 0.3);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .parent-link {
+            flex: 1;
+            color: #a3d1ff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+            .parent-link:hover {
+                color: #70b8ff;
+                text-decoration: underline;
+            }
+
+        .link-icon {
+            color: #ffd700;
+            font-size: 1.1rem;
+            margin-right: 10px;
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffd700;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 8px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+            .copy-btn:hover {
+                background: rgba(255, 215, 0, 0.2);
+            }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 900px) {
+            .students-list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2.2rem;
+            }
+
+            .students-list {
+                grid-template-columns: 1fr;
+            }
+
+            .students-header {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">告家长书</h1>
+            <div class="subtitle">
+                尊敬的各位家长：请在此查看您孩子的相关通知和文件。点击链接可查看详细内容，您也可以复制链接分享给其他家长。
+            </div>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="输入学生姓名搜索...">
+                <button id="search-btn"><i class="fas fa-search"></i> 搜索</button>
+            </div>
+        </header>
+
+        <div class="students-container">
+            <div class="students-header">
+                <h2><i class="fas fa-user-graduate"></i> 学生列表</h2>
+                <div class="student-count">共 <span id="count">6</span> 名学生</div>
+            </div>
+
+            <div class="students-list" id="students-list">
+                <!-- 学生卡片将通过JS动态生成 -->
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2023 阳光学校 | 家长服务中心 | 联系电话: 123-456-7890</p>
+        </div>
+    </div>
+
+    <script>
+        // 示例数据
+        const students = [
+            { id: 1, name: "江佳泺", link: "https://v.xiumi.us/stage/v5/76LIP/632552374" },
+            { id: 2, name: "李华", link: "https://school.edu/notices/lihua" },
+            { id: 3, name: "王思聪", link: "https://school.edu/notices/wangsicong" },
+            { id: 4, name: "赵雨欣", link: "https://school.edu/notices/zhaoyuxin" },
+            { id: 5, name: "刘浩然", link: "https://school.edu/notices/liuhaoran" },
+            { id: 6, name: "陈思琪", link: "https://school.edu/notices/chensiqi" },
+            { id: 7, name: "张孟涵", link: "https://v.xiumi.us/stage/v5/76LIP/632551791" }
+        ];
+
+        // 默认背景图片
+        const defaultBg = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80';
+
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function () {
+            renderStudentList(students);
+
+            // 搜索功能
+            document.getElementById('search-btn').addEventListener('click', searchStudents);
+            document.getElementById('search-input').addEventListener('keyup', function (event) {
+                if (event.key === 'Enter') {
+                    searchStudents();
+                }
+            });
+        });
+
+        // 渲染学生列表
+        function renderStudentList(studentsArray) {
+            const container = document.getElementById('students-list');
+            const countElement = document.getElementById('count');
+
+            countElement.textContent = studentsArray.length;
+
+            if (studentsArray.length === 0) {
+                container.innerHTML = `
+                            <div class="empty-state">
+                                <i class="fas fa-user-graduate"></i>
+                                <p>没有找到学生记录，请联系学校获取信息</p>
+                            </div>
+                        `;
+                return;
+            }
+
+            container.innerHTML = '';
+            studentsArray.forEach(student => {
+                const card = document.createElement('div');
+                card.className = 'student-card';
+                card.innerHTML = `
+                            <div class="student-name">
+                                <i class="fas fa-user"></i> ${student.name}
+                            </div>
+                            <div class="parent-link-container">
+                                <i class="fas fa-link link-icon"></i>
+                                <a href="${student.link}" target="_blank" class="parent-link" title="${student.link}">
+                                    ${student.link}
+                                </a>
+                                <button class="copy-btn" onclick="copyToClipboard('${student.link}')">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                        `;
+                container.appendChild(card);
+            });
+        }
+
+        // 复制链接到剪贴板
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("链接已复制到剪贴板！");
+            }).catch(err => {
+                alert("复制失败，请手动复制链接");
+                console.error('复制失败:', err);
+            });
+        }
+
+        // 搜索学生
+        function searchStudents() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const filteredStudents = students.filter(student => {
+                return student.name.toLowerCase().includes(searchTerm);
+            });
+            renderStudentList(filteredStudents);
+        }
+    </script>
+</body>
+
+</html>
